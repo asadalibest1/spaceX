@@ -1,0 +1,93 @@
+.header-div{
+    /* border: 3px solid white; */
+    height: 70px;
+    background: black;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100vw;
+}
+.inner-header-div{
+    /* border: 1px solid white; */
+    /* display: inline; */
+    height: 100%;
+    width: 97%;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+   /* padding: 0 20px; */
+}
+.header-div .toggle, .header-div img, .header-div .menubar{
+    /* border: 1px solid white; */
+    flex-basis: 100%;
+}
+
+.header-div img{
+    width: 200px;
+    height: 35px;
+    /* padding: 0 200px; */
+}
+.header-div .toggle:hover{
+    cursor: pointer;
+}
+.header-div .toggle span{
+    display: block;
+    width: 30px;
+    height: 3px;
+    background: white;
+    margin: 4px 0;
+    position: relative;
+    transition: .3s;
+
+}
+/* .header-div .toggle span:nth-child(1){
+    opacity: 0;
+}
+.header-div .toggle span:nth-child(4){
+    opacity: 0;
+}
+.header-div .toggle span:nth-child(2){
+    transform: rotate(-40deg);
+    top: 2px;
+
+}
+.header-div .toggle span:nth-child(3){
+    transform: rotate(40deg);
+    top: -3.9px;
+} */
+
+.header-div .menubar{
+    /* border: 1px solid white; */
+    /* display: inline-block; */
+    text-align: right;
+
+}
+.header-div .menubar span{
+    display: inline-block;
+    /* border: 1px solid white; */
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 3px 10px;
+    margin: 0 10px;
+    position: relative;
+}
+.header-div .menubar span:after{
+    content: "";
+    color: rebeccapurple;
+    position: absolute;
+    top: 35px;
+    left: 16%;
+    width: 0%;
+    height: 2px;
+    background: white;
+    transition: .3s;
+}
+.header-div .menubar span:hover{
+    cursor: pointer;
+}
+
+.header-div .menubar span:hover:after{
+    width: 70%;
+}
