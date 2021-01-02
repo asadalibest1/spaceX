@@ -3,8 +3,9 @@ import "./Sidebar.css"
 import spacexLogo from "../../images/spacexLogo.png";
 import { useMissionInfoQuery } from "../../../generated/graphql"
 import { Link } from "react-router-dom";
+import "./sidebarLoader.css";
 
-export default function Sidebar({getId}) {
+export default function Sidebar({ getId }) {
     const { data, error, loading } = useMissionInfoQuery();
 
     console.log(data)
@@ -23,21 +24,35 @@ export default function Sidebar({getId}) {
                     <span></span>
                 </div>
             </div>
-            <div className="sidebarList">
+            <div className="sidebarList" onClick={changeToggle}>
                 <div>
-                    <Link to="/missionDetails">
+                    <Link to="/" className="Link">
                         HOME
                     </Link>
                 </div>
-                <div>MISSIONS</div>
+                <div>
+                    <Link to="/missions" className="Link">
+                        MISSIONS
+                    </Link>
+                </div>
                 {
                     (!loading) ?
                         data.launches.map((item, ind) => {
-                            return <div onClick={()=>{getId(14)}}>{item.mission_name}</div>
+                            return <Link to="/missionDetails" className="Link" onClick={() => getId(ind++)} >
+                                {item.mission_name}
+                            </Link>
                         })
                         :
-
-                        <span>loading</span>
+                        <span className="lds-roller">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
                 }
             </div>
         </div>

@@ -5,19 +5,17 @@ import MissionInfo from "./components/Mission/Mission"
 import Appbar from "./components/Appbar/Appbar"
 import LaunchProfileQuery from "./components/MissionDetails/MissionDetails"
 import Sidebar from './components/Sidebar/Sidebar';
-
 import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link
 } from "react-router-dom";
 
 import client from "./config_file/config"
 import { ApolloProvider } from '@apollo/client'
 
 export default function App() {
-    const [id, setId] = React.useState("1")
+    const [id, setId] = React.useState("0")
 
     function getId(id: string) {
         setId(id);
@@ -27,13 +25,13 @@ export default function App() {
             <ApolloProvider client={client}>
                 <Router>
                     <Appbar />
-                    <Sidebar  getId={getId}/>
+                    <Sidebar getId={getId} />
                     <Switch>
                         <Route exact path="/">
-                            <Home />
+                            <Home getId={getId}/>
                         </Route>
                         <Route path="/missions">
-                            <MissionInfo />
+                            <MissionInfo getId={getId} />
                         </Route>
                         <Route path="/missionDetails">
                             <LaunchProfileQuery id={id} />

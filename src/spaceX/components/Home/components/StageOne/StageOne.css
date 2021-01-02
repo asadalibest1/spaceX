@@ -1,20 +1,21 @@
 .main-home-page{
-    /* border: 2px solid white ; */
+    /* border: 5px solid black ; */
     /* padding-left: 50px; */
-    height: 100vh;
-    width: 100vw;
+    /* height: 100vh; */
+    /* width: 100vw; */
     line-height: 30px;
+    max-height: 100vh;
+    overflow: auto;
+
 }
 .main-home-page .stage-one{
-    /* display: inline-block; */
+    /* border: 5px solid black ; */
     color: rgb(253, 226, 226);
-    /* color: #119DA4; */
-    height: fit-content;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100%;
 
 }
 

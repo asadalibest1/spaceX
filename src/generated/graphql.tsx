@@ -746,14 +746,13 @@ export type MissionInfoQuery = (
     & Pick<Launch, 'mission_name' | 'mission_id' | 'launch_success' | 'launch_year'>
     & { links?: Maybe<(
       { __typename?: 'LaunchLinks' }
-      & Pick<LaunchLinks, 'flickr_images' | 'video_link' >
-      // & Pick<LaunchLinks, 'video_link'>
+      & Pick<LaunchLinks, 'flickr_images' | 'video_link'>
     )> }
   )>>> }
 );
 
 export type LaunchProfileQueryVariables = Exact<{
-  id: Scalars['String'];
+  id?: Maybe<Scalars['String']>;
 }>;
 
 
@@ -762,12 +761,12 @@ export type LaunchProfileQuery = (
   & { launch?: Maybe<(
     { __typename?: 'Launch' }
     & Pick<Launch, 'mission_name' | 'launch_year' | 'launch_success' | 'details'>
-    & { launch_site?: Maybe<(
-      { __typename?: 'LaunchSite' }
-      & Pick<LaunchSite, 'site_name'>
-    )>, rocket?: Maybe<(
+    & { rocket?: Maybe<(
       { __typename?: 'LaunchRocket' }
-      & Pick<LaunchRocket, 'rocket_name' | 'rocket_type'>
+      & Pick<LaunchRocket, 'rocket_name'>
+    )>, launch_site?: Maybe<(
+      { __typename?: 'LaunchSite' }
+      & Pick<LaunchSite, 'site_name_long'>
     )>, links?: Maybe<(
       { __typename?: 'LaunchLinks' }
       & Pick<LaunchLinks, 'flickr_images'>
@@ -816,18 +815,17 @@ export type MissionInfoQueryHookResult = ReturnType<typeof useMissionInfoQuery>;
 export type MissionInfoLazyQueryHookResult = ReturnType<typeof useMissionInfoLazyQuery>;
 export type MissionInfoQueryResult = Apollo.QueryResult<MissionInfoQuery, MissionInfoQueryVariables>;
 export const LaunchProfileDocument = gql`
-    query LaunchProfile($id: String!) {
+    query LaunchProfile($id: String) {
   launch(id: $id) {
     mission_name
+    rocket {
+      rocket_name
+    }
     launch_year
     launch_success
     details
     launch_site {
-      site_name
-    }
-    rocket {
-      rocket_name
-      rocket_type
+      site_name_long
     }
     links {
       flickr_images
@@ -852,7 +850,7 @@ export const LaunchProfileDocument = gql`
  *   },
  * });
  */
-export function useLaunchProfileQuery(baseOptions: Apollo.QueryHookOptions<LaunchProfileQuery, LaunchProfileQueryVariables>) {
+export function useLaunchProfileQuery(baseOptions?: Apollo.QueryHookOptions<LaunchProfileQuery, LaunchProfileQueryVariables>) {
         return Apollo.useQuery<LaunchProfileQuery, LaunchProfileQueryVariables>(LaunchProfileDocument, baseOptions);
       }
 export function useLaunchProfileLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<LaunchProfileQuery, LaunchProfileQueryVariables>) {

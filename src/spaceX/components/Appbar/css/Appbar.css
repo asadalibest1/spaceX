@@ -1,7 +1,7 @@
 .header-div{
     /* border: 3px solid white; */
     height: 70px;
-    background: black;
+    background: transparent;
     text-align: center;
     position: fixed;
     top: 0;
@@ -25,8 +25,8 @@
 
 .header-div img{
     width: 200px;
-    height: 35px;
-    /* padding: 0 200px; */
+    height: 40px;
+    padding: 0 200px;
 }
 .header-div .toggle:hover{
     cursor: pointer;

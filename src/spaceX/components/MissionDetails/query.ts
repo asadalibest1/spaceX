@@ -1,23 +1,22 @@
 import gql from "graphql-tag";
 
 export const LaunchProfile = gql`
-    query LaunchProfile($id: String!) {
+      query LaunchProfile($id: String) {
         launch(id: $id) {
-        id
-        mission_name
-        launch_year
-        launch_success
-        details
-        launch_site {
-            site_name
-        }
-        rocket {
+          mission_name
+          rocket {
             rocket_name
-            rocket_type
-        }
-        links {
+          }
+          launch_year
+          launch_success
+          id
+          details
+          launch_site {
+            site_name_long
+          }
+          links {
             flickr_images
+          }
         }
-    }
-    }
+      }
 `

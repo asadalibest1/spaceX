@@ -1,3 +1,8 @@
+.Link{
+    display: block;
+    text-decoration: none;
+    color: #119DA4;
+ }
 *:hover{
     transition: .3s;
 }
@@ -63,28 +68,36 @@
     left: 15px;
 }
     /* #119DA4 - #0A1826 */
-.home-sidebar .sidebarList  div {
+
+/* .home-sidebar .sidebarList  div:nth-child(2), */
+.home-sidebar .sidebarList .Link{
     border: .5px solid #119DA4;
     border-width: .5px 0px;
     padding: 10px 0;
     font-weight: bold;
     padding-left: 15px;
-    /* transition: .3s; */
+    transition: .3s;
 }
-.home-sidebar .sidebarList  div:hover {
+.home-sidebar .sidebarList  div:nth-child(2):hover,
+.home-sidebar .sidebarList  .Link:hover {
     background: #119DA4;
     color: white;
     cursor: pointer;
 }
-.home-sidebar .sidebarList  div:nth-child(even){
+.home-sidebar .sidebarList  .Link:nth-child(even){
     border: 0px solid;
 }
 .home-sidebar .sidebarList  div:nth-child(1){
+    border-top: 2px solid #119DA4;
     margin-top: 20px;
-    border-top-width: 3px;
     font-size: 20px;
+    /* border-top: 3px solid #119DA4; */
 }
 .home-sidebar .sidebarList  div:nth-child(2){
-    border-width: 2px 0;
     font-size: 20px;
+    /* border-width: 3px 0px; */
+    border-top: 1px solid #119DA4;
+    border-bottom: 1px solid #119DA4;
+    /* border: 2px solid #119DA4; */
+
 }

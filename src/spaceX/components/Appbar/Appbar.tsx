@@ -6,6 +6,20 @@ import { Link } from "react-router-dom";
 
 export default function Appbar() {
 
+// React.useEffect(()=>{
+//     window.scroll = () => {
+//         alert("downward")
+
+//         if (document.body.scrollTop > 350 || document.documentElement.scrollTop > 350) {
+//             // document.getElementsByClassName('header-div')[0].style.backgroundColor ="black";
+//             alert("downward")
+//         }else{
+//             // document.getElementsByClassName('header-div')[0].style.backgroundColor ="transparent";
+//             alert("upward")
+        
+//         }
+//     }
+// },[])
     function changeToggle() {
         const element: any = document.querySelector(".home-sidebar");
         element.style.left = "0%";

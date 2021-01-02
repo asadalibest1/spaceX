@@ -1,19 +1,21 @@
 import React from 'react'
 import { useMissionInfoQuery } from "../../../generated/graphql"
 import MissionsList from "./MissionsList"
-export default function MissionInfo() {
+import backgroundImg from "../../images/sunrise.jpg"
+// import "./loader.css";
+import Loader from '../loader/loader';
+
+export default function MissionInfo({getId}) {
     const { data, error, loading } = useMissionInfoQuery();
 
-    // const [toggle, setToggle] = React.useState(false);
+    React.useEffect(()=>{
+        document.getElementsByTagName("body")[0].style.backgroundImage = `url(${backgroundImg})`;
+        },[])
 
     if (loading)
-        return <h2>Loading 1</h2>
+        return  <Loader />
 
-    // function changeToggle(){
-    //     setToggle(!toggle)
-    // }
-    // console.log(data.launches);
     return (
-        <MissionsList data={data}/>
+        <MissionsList data={data} getId={getId}/>
         )
 }

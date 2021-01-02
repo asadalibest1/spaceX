@@ -1,24 +1,20 @@
 import React from 'react'
-import "./Home.css"
-import rocketMan from "../../images/rocket-man.png";
+import backgroundImg from "../../images/19350.jpg"
 
-export default function Home() {
+import StageOne from "./components/StageOne/StageOne"
+import StageTwo from "./components/StageTwo/StageTwo"
+import StageThree from "./components/StageThree/StageThree"
+
+export default function Home({getId}) {
+    React.useEffect(() => {
+        document.getElementsByTagName("body")[0].style.backgroundImage = `url(${backgroundImg})`;
+    }, [])
+
     return (
         <div className="main-home-page">
-            <div className="stage-one">
-                <h1>Come With Us for Open Your Mind
-                    <img src={rocketMan} alt="rocket man"/>
-                </h1>
-                <h3>An international space research organization that involve to descover the new space things</h3>
-                <h2>To Mars and Beyond</h2>
-                <div className="watch-video">
-                    <div className="traingle-box">
-                        <div className="traingle">
-                        </div>
-                    </div>
-                    <div className="text">Watch Video</div>
-                </div>
-            </div>
-    )</div>
+                <StageOne />
+                <StageTwo getId={getId}/>
+                <StageThree />
+        </div>
     )
 }
