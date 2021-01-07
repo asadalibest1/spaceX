@@ -1,10 +1,20 @@
 .missions-main-div{
-    margin-top: 70px;
+    /* padding-top: 60px; */
+    padding-left: 25px;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
     overflow: auto;
     height: 100vh;
+}
+.missions-main-div h1{
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px 4px black;
+    font-size: 38px;
+    font-weight: 500;
 }
 .missions-main-div > div{
     margin-top: 100px;
@@ -78,4 +88,14 @@ font-weight: 400;
 .missions-main-div div button:hover{
     background: black;
     cursor: pointer;
+}
+@media only screen and (max-width: 800px) {
+    .missions-main-div{
+        padding: 0;
+    }
+    .missions-main-div > div{
+        width: 94%;
+        margin-top: 50px;
+    }
+    
 }

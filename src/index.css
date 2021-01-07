@@ -10,7 +10,7 @@ body {
 
   background-image: url("./spaceX/images/19350.jpg"); /* The image used */
   background-color: #cccccc; /* Used if the image is unavailable */
-  height: 500px; /* You must set a specified height */
+  height: 500px;
   background-position: top; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
@@ -33,9 +33,9 @@ code {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  /* box-shadow: inset 0 0 5px grey;  */
+  box-shadow: inset 0 0 5px grey; 
   border-radius: 10px;
-  background: transparent;
+  background: black;
   padding: 0px 20px;
 }
  
@@ -50,4 +50,16 @@ code {
 ::-webkit-scrollbar-thumb:hover {
   background: wheat; 
   margin: 20px 0px;
+}
+@media only screen and (max-width: 800px) {
+
+  body {
+      height: 100vh;
+  /* background-size: 100vh; Resize the background image to cover the entire container */
+
+  }
+
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
 }

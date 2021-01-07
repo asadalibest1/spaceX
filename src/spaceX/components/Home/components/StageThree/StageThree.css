@@ -4,7 +4,6 @@
     color: white;
     background: black;
     padding-top: 50px;
-
 }
 .page-footer > div{
 flex-basis: 100%;
@@ -35,7 +34,6 @@ padding-left: 20px;
 .page-footer > div p{
     font-weight: 100;
 }
-
 .page-footer > div:nth-child(4) img{
     width: 50px;
     height: 50px;
@@ -56,3 +54,36 @@ padding-left: 20px;
     cursor: pointer;
 
 }
+@media only screen and (max-width: 800px) {
+    .page-footer{
+        flex-direction: column;
+        height: fit-content;
+        padding: 0;
+        flex-direction: column-reverse;
+        overflow: auto;
+        }
+        .page-footer > div:nth-child(4) img{
+            margin: 0 15px;
+        }
+    .page-footer > div{
+        flex-basis: 0%;
+        padding: 0;
+        padding-top: 40px;
+        text-align: center;
+        }
+    .page-footer > div h2{
+        border: 0px solid;
+        width: 100%;
+        padding: 0px;
+        /* border-width: 0px 0px 3px 0px; */
+    }
+.page-footer > div:nth-child(1) img{
+            width: 80%;
+            margin-left: 30px;
+    }
+    .page-footer > div:nth-child(1){
+        /* border: 3px solid red; */
+        padding-bottom: 100px;
+    }
+}
+

@@ -5,8 +5,6 @@ import spacex from "../../images/spacex.jpg";
 import missionDetails from "../../images/missionDetails.jpg"
 import Loader from "../loader/loader";
 
-// import "../Mission/loader.css"
-
 export default function LaunchProfileQuery({ id }) {
 
 React.useEffect(()=>{
@@ -19,31 +17,21 @@ React.useEffect(()=>{
             id: (id + 1).toString(),
         },
     });
-
-
-    console.log(id, data)
+    
+    if (error) {
+        return <h2 className="mission-details-loading">
+                <span>WARNING!</span>
+                    error found, 404!
+                </h2>
+    }
 
     if (loading)
         return  <Loader />
-        // <div className="lds-spinner">
-        //         <div></div>
-        //         <div></div>
-        //         <div></div>
-        //         <div></div>
-        //         <div></div>
-        //         <div></div>
-        //         <div></div>
-        //         <div></div>
-        //         <div></div>
-        //         <div></div>
-        //         <div></div>
-        //         <div></div>
-        //    </div>
            
     if (data === undefined) {
         return <h2 className="mission-details-loading">
                 <span>WARNING!</span>
-                Sorry! I think the Data is not available right now
+                    Sorry! I think the Data is not available right now
                 </h2>
     }
     return (

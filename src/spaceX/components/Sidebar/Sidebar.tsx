@@ -8,11 +8,18 @@ import "./sidebarLoader.css";
 export default function Sidebar({ getId }) {
     const { data, error, loading } = useMissionInfoQuery();
 
-    console.log(data)
-
+    // console.log(data)
+    if (error)
+            <div>found error, 404</div>
     function changeToggle() {
+        const mediaQuery = window.matchMedia('(max-width: 800px)')
         const element: any = document.querySelector(".home-sidebar");
-        element.style.left = "-20%";
+     
+        if(!mediaQuery.matches){
+                element.style.left = "-20%";
+        }else{
+            element.style.left = "-90%";
+        }
     }
 
     return (
@@ -38,7 +45,7 @@ export default function Sidebar({ getId }) {
                 {
                     (!loading) ?
                         data.launches.map((item, ind) => {
-                            return <Link to="/missionDetails" className="Link" onClick={() => getId(ind++)} >
+                            return <Link to="/missionDetails" className="sidebarNames Link" onClick={() => getId(ind++)} key={ind}>
                                 {item.mission_name}
                             </Link>
                         })

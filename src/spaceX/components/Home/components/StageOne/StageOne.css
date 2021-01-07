@@ -1,15 +1,11 @@
 .main-home-page{
-    /* border: 5px solid black ; */
-    /* padding-left: 50px; */
-    /* height: 100vh; */
-    /* width: 100vw; */
     line-height: 30px;
     max-height: 100vh;
     overflow: auto;
 
 }
 .main-home-page .stage-one{
-    /* border: 5px solid black ; */
+    /* border: 1px solid black ; */
     color: rgb(253, 226, 226);
     height: 100vh;
     display: flex;
@@ -35,7 +31,7 @@
 
 .main-home-page .stage-one h2{
     font-weight:400;
-    text-shadow: 1px 1px 2px wheat;
+    text-shadow: 1px 1px 2px black;
     font-size: 38px;
 
 }
@@ -45,13 +41,14 @@
         color: rgb(255, 255, 255);
         width: 40%;
         text-align: center;
-    font-weight: 500;
+        font-weight: 500;
 
 }
 .watch-video{
     width: fit-content;
     padding: 5px 20px;
     display: flex;
+    margin-bottom: 140px;
 }
 .watch-video:hover{
     border-radius: 35% / 100%;
@@ -80,3 +77,33 @@
     top: 5px;
     left: 15px;
     }
+
+@media only screen and (max-width: 800px) {
+    .main-home-page .stage-one{
+        justify-content: initial;
+        padding-top: 40px;
+        height: 80vh;
+    }    
+    .main-home-page .stage-one h1{
+        /* border: 1px solid white; */
+        font-size: 34px;
+        color: rgb(255, 255, 255);
+        width: 80%;
+        padding: 0;
+        /* margin: 0; */
+        text-align: center;
+        font-weight: 500;
+        line-height: 40px;
+    }
+    .main-home-page .stage-one h3{
+        text-shadow: 1px 1px 4px black;
+        color: rgb(255, 255, 255);
+        width: 80%;
+        text-align: center;
+        font-weight: 500;
+}
+.main-home-page .stage-one h2{
+    font-size: 28px;
+    font-weight: 100;
+}
+}

@@ -6,8 +6,7 @@ import Loader from "./loader";
 import "./StageTwo.css"
 
 export default function StageTwo({getId}) {
-    const [modifyData, setData] = React.useState([]) 
-    const { data, error, loading } = useMissionInfoQuery();
+    const { data, loading } = useMissionInfoQuery();
 
     if (loading)
         return <Loader />

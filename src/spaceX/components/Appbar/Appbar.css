@@ -1,25 +1,18 @@
 .header-div{
-    /* border: 3px solid white; */
     height: 70px;
     background: transparent;
     text-align: center;
-    position: fixed;
-    top: 0;
-    left: 0;
     min-width: 100vw;
 }
 .inner-header-div{
-    /* border: 1px solid white; */
-    /* display: inline; */
     height: 100%;
     width: 97%;
     display: inline-flex;
     justify-content: space-between;
     align-items: center;
-   /* padding: 0 20px; */
 }
-.header-div .toggle, .header-div img, .header-div .menubar{
-    /* border: 1px solid white; */
+.header-div .toggle, .header-div img,
+ .header-div .menubar{
     flex-basis: 100%;
 }
 
@@ -41,25 +34,8 @@
     transition: .3s;
 
 }
-/* .header-div .toggle span:nth-child(1){
-    opacity: 0;
-}
-.header-div .toggle span:nth-child(4){
-    opacity: 0;
-}
-.header-div .toggle span:nth-child(2){
-    transform: rotate(-40deg);
-    top: 2px;
-
-}
-.header-div .toggle span:nth-child(3){
-    transform: rotate(40deg);
-    top: -3.9px;
-} */
 
 .header-div .menubar{
-    /* border: 1px solid white; */
-    /* display: inline-block; */
     text-align: right;
 
 }
@@ -90,4 +66,34 @@
 
 .header-div .menubar span:hover:after{
     width: 70%;
+}
+
+@media only screen and (max-width: 800px) {
+    .header-div img{
+        padding: 0;
+    }    
+.inner-header-div div:nth-child(1){
+    /* border: 5px solid yellow; */
+    flex-basis: 0%;
+    width: fit-content;
+
+}
+.inner-header-div div:nth-child(3){
+    display: none;
+    /* border: 5px solid yellow; */
+}
+.header-div .toggle{
+    flex-basis: 0%;
+    margin-left: 15px;
+}
+.inner-header-div{
+    display: flex;
+    justify-content: left;
+}
+
+.header-div img{
+    flex-basis: 0%;
+    width: 47%;
+    margin-left: 22%;
+}
 }

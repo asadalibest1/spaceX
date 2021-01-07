@@ -90,3 +90,8 @@
     opacity: 0;
   }
 }
+@media only screen and (max-width: 800px) {
+  .lds-spinner {
+    left: 40%;
+  }
+}

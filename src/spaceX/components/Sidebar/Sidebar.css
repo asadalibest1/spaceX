@@ -90,14 +90,23 @@
 .home-sidebar .sidebarList  div:nth-child(1){
     border-top: 2px solid #119DA4;
     margin-top: 20px;
-    font-size: 20px;
+    font-size: 23px;
     /* border-top: 3px solid #119DA4; */
 }
 .home-sidebar .sidebarList  div:nth-child(2){
-    font-size: 20px;
+    font-size: 23px;
     /* border-width: 3px 0px; */
     border-top: 1px solid #119DA4;
     border-bottom: 1px solid #119DA4;
     /* border: 2px solid #119DA4; */
 
+}
+@media only screen and (max-width: 800px) {
+    .home-sidebar{
+        width: 90%;
+        left: -90%;
+    }
+    .sidebarNames{
+    font-size: 20px;
+}
 }
